@@ -1,5 +1,7 @@
 $(document).ready( function(){
-    
+    alert("Jquery loaded!");
+   
+    /**
     let game = {
         phase : {
             name: ['Setup', 'Hero', 'Movement', 'Charge', 'Combat', 'Battleshock'],
@@ -10,10 +12,7 @@ $(document).ready( function(){
             'Take and Hold', 'Knife to the Heart', 'Total Conquest', 'Duality of Death', 'Battle for the Pass',
             'Starstrike', 'Scorched Earth', 'Total Commitment', 'Focal Points', 'The Better Part of Valuour',
             'Shifting Objectives', 'Places of Arcane Power', 'The Relocation Orb'],
-        players: []
+        players: [],
     };
-
-    $('#selectedBattle').text(game.battle[0]);
-    $('.dropdown-trigger').dropdown();
-    
+    */
 });
