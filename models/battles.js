@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const battleSchema = new Schema({
+const battlesSchema = new Schema({
   battleId: {
     type: Number,
     required: true
@@ -15,7 +15,7 @@ const battleSchema = new Schema({
   },
   description: {
     type: String,
-    required: true
+    required: false
   },
   image: {
     type: String,
@@ -23,5 +23,5 @@ const battleSchema = new Schema({
   }
 });
 
-const battles = mongoose.model("battles", battleSchema);
+const battles = mongoose.model("battles", battlesSchema);
 module.exports = battles;

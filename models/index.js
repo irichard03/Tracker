@@ -1,4 +1,3 @@
 module.exports = {
-    battle: require('./battles'),
-    books: require('./books')
+    battles: require('./battles')
   };
