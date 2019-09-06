@@ -10,7 +10,7 @@ const battlesSchema = new Schema({
     required: true
   },
   source: {
-    type: [String],
+    type: String,
     required: true
   },
   description: {

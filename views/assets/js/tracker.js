@@ -1,6 +1,6 @@
 $(document).ready( function(){
-    alert("Jquery loaded!");
-   
+    //refresh dropdown
+    getBattles();
     /**
     let game = {
         phase : {
@@ -16,3 +16,24 @@ $(document).ready( function(){
     };
     */
 });
+
+$('.dropdown-trigger').dropdown();
+
+//get battles from Mongo database
+function getBattles(){
+    $.ajax({
+        url: '/api/battles',
+        type: 'GET',
+        dataType: "json",
+        success: (data) => {
+            for(let i = 0; i < data.length; i++){
+                $('.dropdown-content').append(`<li><a href='#!'>${data[i].name}</a></li>`);
+            }
+            
+
+        },
+        error: (data) => {
+            alert("Error: " + data);
+        }
+    });
+}
