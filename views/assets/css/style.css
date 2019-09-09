@@ -1,0 +1,29 @@
+.dropdown-content li {
+    clear: both;
+    color:orangered;
+    cursor: pointer;
+    min-height: 50px;
+    line-height: 1.5rem;
+    width: 100%;
+    text-align: left;
+}
+
+.btn, .btn-large, .btn-small {
+    text-decoration: none;
+    color: #fff;
+    background-color: orangered;
+    text-align: center;
+    letter-spacing: .5px;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: orangered;
+    text-align: center;
+    letter-spacing: .5px;
+}
+
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+    background-color: black;
+}

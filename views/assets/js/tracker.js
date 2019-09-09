@@ -19,6 +19,7 @@ $(document).ready( function(){
 
 $('.dropdown-trigger').dropdown();
 
+
 //get battles from Mongo database
 function getBattles(){
     $.ajax({
@@ -27,7 +28,8 @@ function getBattles(){
         dataType: "json",
         success: (data) => {
             for(let i = 0; i < data.length; i++){
-                $('.dropdown-content').append(`<li><a href='#!'>${data[i].name}</a></li>`);
+                $('#battleSelect').append(`<option value='${data[i].name}'>${data[i].name}</option>`);
+                //$('#battleSelect').append(`<li data-target='${data[i].name}'>${data[i].name}</li>`);
             }
             
 
