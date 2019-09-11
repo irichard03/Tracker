@@ -1,3 +1,4 @@
 module.exports = {
-    battles: require('./battles')
+    battles: require('./battles'),
+    abilities: require('./abilities')
   };

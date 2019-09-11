@@ -10,84 +10,113 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title></title>
+    <title>Tracker</title>
     <meta name='description' content=''>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!--link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
     <link rel='stylesheet' href='./assets/css/style.css'>
 
 </head>
 
 <body>
-    <h1 class='center-align'>Tracker</h1>
     <div class='container'>
-        <!-- Page Content goes here -->
-        <div>
-            <form>
-                    <div>
-                        <label for="playerOne">Player:</label>
-                        <input type="text"></input>
-                        <h2>Score:<span id="playerOneScore">0</span></h2>
-                        <button>+</button><button>-</button>
-                    </div>
-                    <div>
-                        <label for="playerTwo">Player:</label>
-                        <input type="text"></input>
-                        <h2>Score:<span id="playerTwoScore">0</span></h2>
-                        <button>+</button><button>-</button>
-                    </div>
-            </form>
-        </div>
-        <div>
-            <div>
-                <form>
-                    <label for="battlePlan">BattlePlan:</label>
-                    <select id="battleSelect" name="battlePlan">
-                        <option value="none"><em>select...</em></option>
-                    </select>
-                    <input type="submit" value="Submit">
-                </form>
+    <h1 class='center-align indigo lighten-5'>Tracker</h1>  
+        <!-- Player Tracker -->
+        <div class="row">
+            <div class="col s6 left">
+                <div id="playerLeft" class="left left-align">
+                    <label for="playerOne">Player:</label>
+                    <input type="text"></input>
+                </div>
             </div>
-            <div>
-                <p id="battleDescription">PlaceHolder Description</p>
+            <div class="col s6 right">
+                <div id="playerReft" class="right right-align">
+                    <label for="playerTwo">Player:</label>
+                    <input type="text"></input>
+                </div>
             </div>
         </div>
-        <!--Round Counter-->
-        <div>
+        <div class="row">
+            <div class="col s2 left left-align">
+                <a class="waves-effect waves-light btn indigo">+</a>
+            </div>
+            <div class="col s2 left left-align">
+                <p>Score: <span>0</span></p>
+            </div>
+            <div class="col s2 left left-align">
+                <a class="waves-effect waves-light btn indigo">-</a>
+            </div>
+            <div class="col s2 right right-align">
+                <a class="waves-effect waves-light btn indigo">+</a>
+            </div>
+            <div class="col s2 right right-align">
+                <p>Score: <span>0</span></p>
+            </div>
+            <div class="col s2 right right-align">
+                <a class="waves-effect waves-light btn indigo   ">-</a>
+            </div>
+        </div>
+        
+        <!--Battleplan Selecter-->
+        <div class="row">
+            <div class="input-field col s6">
+                <select id='battleSelect' name='battlPlan'>
+                    <option value="none"><em>select...</em></option>
+                </select>
+                <label>Battleplan:</label>
+            </div>
+            <div class="col s6">
+                <p id="battleDescription">Description:</p>
+            </div>
+        </div>
+        <!--Phase Tracker-->
+        <div class="row">
+            <div class="input-field col s6">
             <form>
                 <label for="phase">Phase:</label>
-                <select id="phaseSelect" name="phaseSelect">
-                    <option value="none"><em>select...</em></option>
-                    <option value="hero">Hero</option>
-                    <option value="movement">Movement</option>
-                    <option value="shooting">Shooting</option>
-                    <option value="charge">Charge</option>
-                    <option value="combat">Combat</option>
-                    <option value="battleShock">BattleShock</option>
+                <select id="phaseSelect" name="phase">
+                        <option value="none"><em>select...</em></option>
+                        <option value="hero">Hero</option>
+                        <option value="movement">Movement</option>
+                        <option value="shooting">Shooting</option>
+                        <option value="charge">Charge</option>
+                        <option value="combat">Combat</option>
+                        <option value="battleShock">BattleShock</option>
                 </select>
             </form>
+            </div>
+            <div class="input-field col s6">
+                <form>
+                    <label for="subPhase">Subphase:</label>
+                        <select id="subPhaseSelect" name="subPhase">
+                            <option value="none"><em>select...</em></option>
+                            <option value="hero">Start</option>
+                            <option value="movement">End</option>
+                        </select>
+                    </form>
+                    </div>
         </div>
 
         <div>
-            <table>
-                <th>
-                    <tr>
-                        <td>Ability</td>
-                        <td>Hero</td>
-                        <td>Description</td>
-                        <td>Range</td>
-                    </tr>
-                </th>
-                <tr>
-                <tr>
-                    <td>Prayer of Ash</td>
-                    <td>Priest</td>
-                    <td>Roll d6, on 4+ +1 to save unit within 18"</td>
-                    <td>18"</td>
-                </tr>
-
-                </tr>
-            </table>
+            <h2 class="center-align indigo lighten-4">Abilities</h2>
+            <div id="abilityTable">
+                <div class="row">
+                    <div class="center-align col s2">
+                        <p>Name</p>
+                    </div>
+                    <div class="center-align col s2">
+                        <p>Hero</p>
+                    </div>
+                    <div class="center-align col s4">
+                        <p>Description</p>
+                    </div>
+                    <div class="center-align col s2">
+                        <p>Range</p>
+                    </div>
+                    <div class="center-align col s2">
+                        <p>Phase</p>
+                    </div>
+                </div>
         </div>
 
     </div>

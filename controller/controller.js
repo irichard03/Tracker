@@ -13,38 +13,13 @@ mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
             res.json(error);
         });
     });
-    
 
-    
-//todo add router functions
-
-    /* example:
-    router.post("/api/books", function(req,res) {
-    
-        db.books.create({ 
-            bookId: req.body.id,
-            title: req.body.title,
-            authors: req.body.authors,
-            description: req.body.description,
-            image: req.body.image,
-            link: req.body.link
-        }).then(function(data) { 
-        res.send("OK");
-        }).catch(function(data){
+    router.get('/api/abilities', (req,res) =>{
+        db.abilities.find({}).then((data)=>{
+            res.json(data);
+        }).catch((error)=>{
             res.json(error);
         });
-
     });
-
-    
-    */
-
-
-
-
-
-
-
-//todo api/books/:id (delete) from mongo
 
 module.exports = router;
